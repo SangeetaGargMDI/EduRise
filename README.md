@@ -27,7 +27,7 @@ face **declining enrolment** as parents shift to private schools.
 2. **Why** is it likely to drop there?  
 3. **What** should we do about it, in simple, local language?
 
-EduRise directly targets this gap.
+EduRise directly targets this gap ,
 
 ---
 
