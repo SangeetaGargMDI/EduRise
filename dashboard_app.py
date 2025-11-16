@@ -67,7 +67,7 @@ def main():
     st.subheader("Explanation (XAI)")
     st.info("Connect this to explain_xai.explain_instance for per-school drivers.")
 
-    st.subheader("AI-generated recommendations")
+    st.subheader("AI-generated recommendation")
     st.info("Connect this to generate_reports.build_prompt and your LLM backend.")
 
 if __name__ == "__main__":
