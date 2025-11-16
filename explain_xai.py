@@ -1,8 +1,6 @@
 
 """
-Explainable AI utilities using SHAP (if available).
-
-If SHAP is not installed, falls back to simple feature importances.
+Explainable AI utilities using SHAP. If SHAP is not installed, it falls back to simple feature importances.
 """
 
 from pathlib import Path
@@ -22,7 +20,7 @@ def load_model():
     return bundle["model"], bundle["feature_names"]
 
 def explain_instance(instance: np.ndarray):
-    """Return a list of (feature_name, importance) pairs for a single instance."""
+    # for single instance it return feature_name, importance pairs list."""
     model, feature_names = load_model()
     if HAS_SHAP:
         explainer = shap.TreeExplainer(model)
