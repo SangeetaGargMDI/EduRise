@@ -1,6 +1,5 @@
 """
 generate_reports.py
-
 Generative AI interface for EduRise.
 Takes prediction + explanation and formats a prompt for an LLM.
 """
