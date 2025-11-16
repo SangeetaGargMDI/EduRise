@@ -3,9 +3,9 @@
 Data preprocessing module for EduRise.
 
 Responsibilities:
-- Load raw education datasets (U-DISE+, NAS, Census-like CSVs)
-- Clean missing values
-- Merge into a single modelling table
+- Load raw education data
+- Cleaning the missing values in the data
+- Combine and merge into a single table
 """
 
 import pandas as pd
@@ -18,9 +18,9 @@ PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 def load_udise(path: Path) -> pd.DataFrame:
     """Load U-DISE+ like CSV file."""
     return pd.read_csv(path)
-
+"""Performing basic cleaning"""
 def basic_clean(df: pd.DataFrame) -> pd.DataFrame:
-    """Simple cleaning: drop fully empty columns and fill numeric NaNs with median."""
+    """Drop fully empty columns and fill numeric NaNs with median."""
     df = df.copy()
     df = df.dropna(axis=1, how="all")
     for col in df.select_dtypes(include="number").columns:
@@ -29,9 +29,9 @@ def basic_clean(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def build_modelling_table(udise_file: str) -> pd.DataFrame:
-    """Build a single modelling table from a U-DISE-like CSV.
-
-    For demo, we only use one file and apply basic cleaning.
+    """
+    Build a single modeling file from the data csv
+    will use only one file and apply basic cleaning for demo
     """
     udise_path = RAW_DATA_DIR / udise_file
     df = load_udise(udise_path)
@@ -49,4 +49,4 @@ def build_modelling_table(udise_file: str) -> pd.DataFrame:
 if __name__ == "__main__":
     print("Building modelling table from sample_udise.csv ...")
     table = build_modelling_table("sample_udise.csv")
-    print("Processed rows:", len(table))
+    print("Processed values in rows:", len(table))
