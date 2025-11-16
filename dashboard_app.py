@@ -1,7 +1,6 @@
 
 """
-Simple Streamlit dashboard for EduRise.
-
+Streamlit dashboard for EduRise (simple and intuitive).
 To run:
     streamlit run dashboard_app.py
 """
