@@ -1,6 +1,6 @@
 
 """
-Explainable AI utilities using SHAP. If SHAP is not installed, it falls back to simple feature importances.
+This AI utilities uses SHAP. If SHAP is not installed, it falls back to simple feature importances.
 """
 
 from pathlib import Path
@@ -20,12 +20,12 @@ def load_model():
     return bundle["model"], bundle["feature_names"]
 
 def explain_instance(instance: np.ndarray):
-    # for single instance it return feature_name, importance pairs list."""
+    #for single instance it return feature_name, importance pairs list."""
     model, feature_names = load_model()
     if HAS_SHAP:
         explainer = shap.TreeExplainer(model)
         shap_values = explainer.shap_values(instance)
-        # Mean absolute SHAP value across classes
+        #Mean absolute SHAP value across classes
         importance = np.mean(np.abs(shap_values), axis=0).flatten()
         return list(zip(feature_names, importance))
     else:

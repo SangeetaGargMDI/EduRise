@@ -36,7 +36,7 @@ def build_modelling_table(udise_file: str) -> pd.DataFrame:
     udise_path = RAW_DATA_DIR / udise_file
     df = load_udise(udise_path)
     df = basic_clean(df)
-    # For demo, assume 'enrolment_current' and 'enrolment_next' exist.
+    #For demo, assume 'enrolment_current' and 'enrolment_next' exist.
     if {"enrolment_current", "enrolment_next"}.issubset(df.columns):
         denom = df["enrolment_current"].replace(0, pd.NA)
         df["enrolment_change_pct"] = (
