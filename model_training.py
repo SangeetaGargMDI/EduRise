@@ -2,7 +2,7 @@
 """
 Model training module for EduRise.
 
-Trains a simple tree-based model to predict enrolment_change_pct bucket.
+Utilizes a tree-based algorithm to learn patterns in the data and generate predictions for the enrolment_change_pct bucket.
 """
 
 from pathlib import Path
